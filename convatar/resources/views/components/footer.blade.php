@@ -1,3 +1,3 @@
 <footer>
-    &copy; {{ now()->year }} All Bangla Newspaper. All logos belong to their respective owners.
+    &copy; {{ now()->year }} Bangla Newspaper. All logos belong to their respective owners.
 </footer>
