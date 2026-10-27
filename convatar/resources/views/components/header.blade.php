@@ -1,6 +1,6 @@
 <header class="topbar">
     <div class="topbar-inner">
-        <a href="{{ route('home') }}" class="brand">ALL BANGLA<small>NEWSPAPER</small></a>
+        <a href="{{ route('home') }}" class="brand">BANGLA<small>NEWSPAPER</small></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" onclick="const m=document.getElementById('main-menu'); const open=m.classList.toggle('is-open'); this.setAttribute('aria-expanded', open ? 'true' : 'false');">
             <span aria-hidden="true">☰</span> Menu
         </button>
