@@ -156,10 +156,9 @@ document.addEventListener('alpine:init', () => {
     >
     </button>
     <button type="button" @click="clearAll()" class="btn">Clear</button>
-    
-    <button type="button" @click="download()" class="btn">Download .txt</button>
     <input type="file" accept=".txt,.docx" @change="upload($event)" class="text-sm">
     <button type="button" @click="copy()" class="btn" x-text="copied ? 'Copied!' : 'Copy'"></button>
+    <button type="button" @click="download()" class="btn">Download .txt</button>
 
   </div>
 
