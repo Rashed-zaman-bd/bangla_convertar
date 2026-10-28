@@ -142,10 +142,8 @@ document.addEventListener('alpine:init', () => {
 
 <body class="bg-gray-50 p-4">
 <div x-data="converter" x-init="$watch('input', () => convert())" class="mx-auto max-w-5xl">
-  <h1 class="mb-4 text-xl font-bold"
-      x-text="mode === 'b2u' ? 'Bijoy → Unicode' : 'Unicode → Bijoy'"></h1>
-
-  <div class="mb-3 flex flex-wrap items-center gap-2">
+  
+  <div class="mb-3 mt-10 flex flex-wrap items-center gap-2">
     <button type="button" @click="convert()" class="btn" >Convert</button>
      <!-- Swap -->
     <button
