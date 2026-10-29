@@ -3,7 +3,7 @@
 @section('title', 'All Bangla Newspapers, TV, Radio & News Sites')
 
 @section('content')
-    @include('components.section-nav', ['categories' => $categories])
+    
 
     @forelse ($categories as $category)
         @include('components.newspaper-section', ['category' => $category])
