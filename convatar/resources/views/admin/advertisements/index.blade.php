@@ -1,5 +1,5 @@
 
-@extends('layouts.admin')
+@extends('admin.layout')
 
 @section('title', 'Manage Advertisements')
 

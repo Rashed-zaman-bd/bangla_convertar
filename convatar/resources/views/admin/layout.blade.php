@@ -78,7 +78,9 @@
                 Newspapers
             </a>
 
-       
+            <a href="{{ route('admin.advertisements.index') }}">
+                Advertisements
+            </a>
 
             <a href="{{ route('home') }}">
                 View Website

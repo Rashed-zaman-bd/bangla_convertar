@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertisement;
 use App\Models\NewspaperCategory;
 use Illuminate\View\View;
 
@@ -19,8 +20,15 @@ class NewspaperController extends Controller
             ->orderBy('title')
             ->get();
 
+        $advertisements = Advertisement::query()
+            ->where('is_active', true)
+            ->orderBy('sort_order')
+            ->get()
+            ->keyBy('position');
+
         return view('newspapers.index', [
             'categories' => $categories,
+            'advertisements' => $advertisements,
             'adEvery' => 2,
         ]);
     }

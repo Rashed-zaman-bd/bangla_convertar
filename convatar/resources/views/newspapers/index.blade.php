@@ -4,18 +4,25 @@
 
 @section('content')
     
-
+    
     @forelse ($categories as $category)
-        @include('components.newspaper-section', ['category' => $category])
 
-        @if (($loop->iteration % $adEvery) === 0 && !$loop->last)
-            @include('components.advertisement', [
-                'slot' => 'home-feed-' . $loop->iteration,
-                'className' => 'ad-feed',
-                'label' => 'Advertisement · 970×120'
-            ])
-        @endif
+        {{-- Newspaper Category --}}
+        @include('components.newspaper-section', [
+            'category' => $category
+        ])
+
+        {{-- Advertisement Under Every Category --}}
+        @include('components.advertisement', [
+            'slot' => 'home-feed-' . $loop->iteration,
+            'className' => 'ad-feed',
+            'label' => 'Advertisement · 970×120'
+        ])
+
     @empty
-        <div class="panel empty">No categories available yet. Please add categories from the admin panel.</div>
+        <div class="panel empty">
+            No categories available yet. Please add categories from the admin panel.
+        </div>
     @endforelse
+
 @endsection

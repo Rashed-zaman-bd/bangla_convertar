@@ -1,14 +1,15 @@
 
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NewspaperController as PublicNewspaperController;
-use App\Http\Controllers\Admin\NewspaperController as AdminNewspaperController;
+use App\Http\Controllers\Admin\AdvertisementController;
 use App\Http\Controllers\Admin\NewspaperCategoryController;
+use App\Http\Controllers\Admin\NewspaperController as AdminNewspaperController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ConverterController;
+use App\Http\Controllers\NewspaperController as PublicNewspaperController;
 use App\Http\Middleware\TrackVisitors;
+use Illuminate\Support\Facades\Route;
 
 // Public website routes with visitor tracking
 Route::middleware(TrackVisitors::class)->group(function () {
@@ -60,7 +61,18 @@ Route::middleware(['auth'])
         Route::resource('newspapers', AdminNewspaperController::class)
             ->except(['show']);
 
+
     });
+
+Route::middleware(['auth'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('advertisements', AdvertisementController::class)
+            ->except(['show']);
+    });
+
+
 
 
 
